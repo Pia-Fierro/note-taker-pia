@@ -20,7 +20,7 @@ noteRouter.post('/notes', (req, res) => {
         const newNote = {
             title,
             text,
-            note_id: uuidv4(),
+            id: uuidv4(),
         };
 
         readAndAppend(newNote, './db/db.json');
@@ -43,5 +43,20 @@ noteRouter.get('/:note_id', (req, res) => {
                 : res.json('No note with that ID');
         });
 });
+
+// DELETE route to delete a specific note
+
+noteRouter.delete('/notes/:note_id', (req,res) => {
+    const noteId = req.params.note_id;
+    readFromFile('./db/db.json')
+        .then((data) => JSON.parse(data))
+        .then((json) => {
+            const result = json.filter((title) => title.id!== noteId);
+            writeToFile('./db/db.json', result);  
+            res.json(result);
+        })
+
+
+})
 
 module.exports = noteRouter;
