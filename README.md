@@ -1,50 +1,32 @@
-in progress
+# Note taker 
 
-# 🏗️ Module 11 Mini-Project: Add Routes to Existing Application
+## Description
+Note taker application it's built for users to write and save-delete notes. 
+The app it's built in node, using express.js and it save and retrieve notes data from a JSON file.
 
-In this mini-project, you will work with a group to add routes to an existing application. You will create one wildcard route for serving up a 404 page, as well as a diagnostics route for logging failed form validation.
+## Installation and usage of application
 
-* As a developer, I want to be able to add routes to an existing application.
+Open server.js file in integrated terminal.
+Run nmp install in the command line. Then, run npm start. An HTML file will be automatically generated and the terminal will show an URL link. Click it to be directed to the Note taker start page.  
 
-* As a developer, I want to serve up a custom 404 page when the requested resource doesn't exist.
+Click on the Start buttom on the start page to be directed to notes page. If there are preexisting notes, this will be shown at the left side of the page.
+When a new note is wrote (with note title and note text) and the save button in pressed, the saved note will populated the left side of page. If user click the title of a saved note, the title and note text od that note will populated the right side of the page. To create a new note, click the plus icon.
+Saved notes can be delete it by clickin trash icon next to each saved note.
+When users click Note taker title at top righ side of the page, then user will be redirected to start page.
 
-* As a developer, I want to log usage statistics from users of my site.
+## Technology
+- JavaScript
+- Node.js
+- npm modules : fs and uuid (to create unique id for each note).
+- Express.js
 
-* As a developer, I want to be able to deploy my apps to Heroku.
 
-## Acceptance Criteria
+## Lynks:
 
-* It's done when I have created a wildcard route in `server.js` that will send the users to a 404 page.
+Heroku link to deployed app:
 
-* It's done when I have created a custom `404.html` page for my wildcard route to serve. 
+ [Click to be directed to the deployed app](https://sheltered-garden-14412.herokuapp.com/)
 
-* It's done when I have created a POST route for `/api/diagnostics` that will store information about the invalid form submissions.
+Link to a video demostration of the app: 
 
-* It's done when I have created a GET route for `/api/diagnostics` that will return the content of `db/diagnostics/json`.
-
-* It's done when I have created a `fetch()` request on the front end that will send a POST request to `/api/diagnostics` every time a user attempts to submit an invalid form.
-
-* It's done when I have tested my `/api/diagnostics` endpoint using Insomnia.
-
-* It's done when I have tested the wildcard route by visiting any non-existent path, like `http://localhost/test`.
-
-* It's done when I have deployed the finished application to Heroku.
-
----
-
-## 💡 Hints
-
-How can we declare a wildcard route in Express.js?
-
-How will `fs.writeFile()` help us log usage stats?
-
-## 🏆 Bonus
-
-If you have completed this activity, work through the following challenge with your partner to further your knowledge:
-
-* How else could we implement statistics logging without making a request from the front end?
-
-Use [Google](https://www.google.com) or another search engine to research this.
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+[Click to see the app working](https://watch.screencastify.com/v/fK7Qxbk5uZS0plcUk8os)
